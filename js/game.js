@@ -36,8 +36,12 @@ Game.prototype = {
   },
   togglePlayerTurn: function(){
     var playerHasWon = this.board.currentPlayerWon();
+    var gameIsOverDraw = this.board.gameOverInDraw();
     if(playerHasWon){
       alert(this.currentTurn + " has Won the game!")
+      this.resetGame();
+    } else if(gameIsOverDraw){
+      alert("Game is over.  You tied.  Lame.")
       this.resetGame();
     } else {
       this.currentTurn = (this.currentTurn == this.playerOne) ? this.playerTwo : this.playerOne;

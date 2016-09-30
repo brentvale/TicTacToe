@@ -73,6 +73,17 @@ Board.prototype = {
     
     return false;
   },
+  gameOverInDraw: function(){
+    var draw = true;
+    for(var i = 0; i < 3; i++){
+      for(var j = 0; j < 3; j++){
+        if(this.grid[i][j] == "-"){
+          draw = false;
+        }
+      }
+    }
+    return draw;
+  },
   setCurrentTurn: function(turn){
     this.currentTurn = turn;
   }
