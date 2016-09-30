@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  
+  <style>
+  #main{
+    width: 300px;
+    height: 300px;
+  }
+  #main div div {
+    border: 1px solid black;
+    display:inline-block;
+    height: 95px;
+    vertical-align:top;
+    width:95px;
+  }
+  [class*='row-'] div:hover {
+    cursor: pointer;
+    background-color: red;
+  }
+  </style>
+</head>
+
+
+<body>
+  
+  <div id="main">
+        <div class="row-1">
+            <div class="tile-1"></div>
+            <div class="tile-2"></div>
+            <div class="tile-3"></div>
+        </div>
+        <div class="row-2">
+            <div class="tile-4"></div>
+            <div class="tile-5"></div>
+            <div class="tile-6"></div>
+        </div>
+        <div class="row-3">
+            <div class="tile-7"></div>
+            <div class="tile-8"></div>
+            <div class="tile-9"></div>
+        </div>
+  </div>
+  
+  <script src="js/game.js"></script>
+  <script src="js/board.js"></script>
+
+  <script>
+    $(function(){
+      var game = new Game({board: $("#main")});
+    });
+  </script>
+
+    
+</body>
+</html>
