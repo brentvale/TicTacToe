@@ -11,12 +11,13 @@ Game.prototype = {
     var that = this;
     $("#main div div").on("click", function(event){
       var classNum = parseInt($(event.currentTarget).attr("class").slice(-1));
-
-      that.board.setCurrentTurn(that.currentTurn);
-      that.board.addMove(classNum);
+      if(that.board.isValidMove(classNum)){
+        that.board.setCurrentTurn(that.currentTurn);
+        that.board.addMove(classNum);
       
-      $(event.currentTarget).html(that.currentTurn);
-      that.togglePlayerTurn();
+        $(event.currentTarget).html(that.currentTurn);
+        that.togglePlayerTurn();
+      }
     });
   },
   resetGame: function(){
